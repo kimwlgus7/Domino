@@ -2,24 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DominoChange : MonoBehaviour {
-	public GameObject MovingDomino;
-
+public class CameraChange : MonoBehaviour {
+	public bool camerastate;
 
 	// Use this for initialization
 	void Start () {
-
-	}
-
-
-
-	// Update is called once per frame
-	void Update () {
 		
 	}
-	public void Change()
+	
+	// Update is called once per frame
+	void Update () {
+			
+		
+	}
+	public void _camera()
 	{
-		Instantiate (MovingDomino, transform.position, transform.rotation);
-		Destroy (gameObject);
+		if (camerastate == true) 
+		{
+			gameObject.SetActive (true);
+		}
 	}
 }

@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour {
 	public float vertical = 0.0f;
 	public float Movespeed = 5.0f;
 	public float Rotatespeed = 100.0f;
+	public GameObject StopDomino;
+	public GameObject Newcamera;
 
 	// Use this for initialization
 	void Start () {
@@ -24,6 +26,14 @@ public class PlayerController : MonoBehaviour {
 		Vector3 moveDirect = (Vector3.forward * vertical) + (Vector3.right * horizontal);
 		Mytransform.Translate (moveDirect.normalized * Time.deltaTime * Movespeed, Space.Self);
 		Mytransform.Rotate(Vector3.up* Time.deltaTime * Rotatespeed * Input.GetAxis("Mouse X"));
+		if (Input.GetKeyUp ("space")) 
+		{
+			//Debug.Log ("SEX");
+			GameObject.Find("MainCamera").SetActive(true);
+			Destroy(gameObject);
+
+		}
+
 	}
 
 }
