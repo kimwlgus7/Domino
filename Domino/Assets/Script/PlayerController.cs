@@ -9,8 +9,8 @@ public class PlayerController : MonoBehaviour {
 	public float vertical = 0.0f;
 	public float Movespeed = 5.0f;
 	public float Rotatespeed = 100.0f;
-	public GameObject StopDomino;
-	public GameObject Newcamera;
+    public GameObject LastDomino;
+
 
 	// Use this for initialization
 	void Start () {
@@ -29,10 +29,11 @@ public class PlayerController : MonoBehaviour {
 		if (Input.GetKeyUp ("space")) 
 		{
 			//Debug.Log ("SEX");
-			GameObject.Find("MainCamera").SetActive(true);
+			GameObject.Find("Cam").transform.Find("MainCamera").gameObject.SetActive(true);
 			Destroy(gameObject);
+            Instantiate(LastDomino, transform.position, transform.rotation);
 
-		}
+        }
 
 	}
 

@@ -6,10 +6,10 @@ public class DominoChange : MonoBehaviour {
 	public GameObject MovingDomino;
 
 
-	// Use this for initialization
-	void Start () {
-
-	}
+    // Use this for initialization
+    void Start()
+    {
+    }
 
 
 
